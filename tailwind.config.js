@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
-	],
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -15,8 +15,45 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    fontSize: {
+      xxs: "0.6875rem",
+      xs: "0.75rem",
+      sm: "0.8125rem",
+      base: "0.875rem",
+      xl: "1rem",
+      "2xl": "1.125rem",
+      "3xl": "1.5rem",
+    },
     extend: {
       colors: {
+        aiGradient: {
+          100: "linear-gradient(141deg, rgba(215,249,230,1) 0%, rgba(255,255,255,1) 100%)",
+        },
+        dwGreen: {
+          100: "#63D195",
+          200: "#4DCA85",
+          300: "#36C476",
+          400: "#20BD67",
+          500: "#1DAA5D",
+          600: "#1A9752",
+          700: "#168448",
+          800: "#13713E",
+          900: "#0B502B",
+        },
+        dwBlack: {
+          100: "#F8F8F8",
+          200: "#E1E1E1",
+          300: "#CBCBCB",
+          400: "#B4B4B4",
+          500: "#9E9E9E",
+          600: "#878787",
+          700: "#717171",
+          800: "#5A5A5A",
+          900: "#444444",
+          1000: "#2D2D2D",
+          1100: "#171717",
+          1200: "#000000",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -73,4 +110,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
