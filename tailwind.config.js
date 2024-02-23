@@ -8,13 +8,13 @@ module.exports = {
     "./src/**/*.{js,jsx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
+    // container: {
+    //   center: true,
+    //   padding: "2rem",
+    //   screens: {
+    //     "2xl": "1400px",
+    //   },
+    // },
     fontSize: {
       xxs: "0.6875rem",
       xs: "0.75rem",

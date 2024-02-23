@@ -5,16 +5,16 @@ import { cva } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded text-xs tracking-wide font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center rounded text-xs gap-1.5 tracking-normal font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        ai: "bg-white bg-gradient-to-br from-dwGreen-100/40 to-white border border-dwGreen-700 border-l-dwGreen-200 border-t-dwGreen-200 text-dwGreen-700 hover:bg-dwGreen-700/30",
+        ai: "bg-white bg-gradient-to-br from-dwGreen-100/40 to-white border border-dwGreen-700 border-l-dwGreen-200 border-t-dwGreen-200 text-dwGreen-900 hover:bg-dwGreen-700/30",
         default: "bg-dwGreen-700 text-primary-foreground hover:bg-dwGreen-800",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-dwBlack-1200 bg-background hover:bg-accent hover:bg-dwBlack-100",
+          "border border-dwBlack-300 bg-background hover:bg-accent hover:bg-dwBlack-100",
         secondary: "bg-dwBlack-100 text-dwBlack-1200 hover:bg-dwBlack-200",
         ghost:
           "text-dwBlack-1200 hover:bg-dwBlack-100/50 hover:text-accent-foreground",
@@ -24,7 +24,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-9 px-3 py-2",
-        sm: "h-8 px-3",
+        sm: "h-7 px-2",
         lg: "h-11 px-4",
         icon: "h-9 w-9",
       },
