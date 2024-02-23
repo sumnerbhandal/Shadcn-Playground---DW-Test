@@ -15,9 +15,9 @@ const buttonVariants = cva(
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
           "border border-dwBlack-300 bg-background hover:bg-accent hover:bg-dwBlack-100",
-        secondary: "bg-dwBlack-100 text-dwBlack-1200 hover:bg-dwBlack-200",
+        secondary: "bg-dwBlack-100 text-dwBlack-1100 hover:bg-dwBlack-200",
         ghost:
-          "text-dwBlack-1200 hover:bg-dwBlack-100/50 hover:text-accent-foreground",
+          "text-dwBlack-1100 hover:bg-dwBlack-100/50 hover:text-accent-foreground",
         link: "text-dwGreen-700 underline-offset-4 underline text-sm tracking-normal hover:text-dwGreen-800",
         blockLink:
           "text-dwGreen-700 text-sm text-sm tracking-normal hover:text-dwGreen-800",
