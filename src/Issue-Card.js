@@ -14,7 +14,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-export default function CardDemo() {
+export default function IssueCardDemo() {
   return (
     <div
       style={{
@@ -25,7 +25,7 @@ export default function CardDemo() {
         padding: "4rem",
       }}
     >
-      <h2 className="text-3xl font-semibold basis-full pb-3">Card</h2>
+      <h2 className="text-3xl font-semibold basis-full pb-3">Issue Card</h2>
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
         <Card variant="error">

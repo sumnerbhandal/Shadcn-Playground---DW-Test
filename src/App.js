@@ -20,16 +20,15 @@ import {
 } from "./components/ui/dialog";
 
 import Buttons from "./Buttons";
-
-import { useState } from "react";
-import { Info, Sparkles } from "lucide-react";
-import CardDemo from "./Card";
+import IssueCardDemo from "./Issue-Card";
+import CompareCardDemo from "./Compare-Card";
 
 export default function App() {
   return (
     <div>
       <Buttons />
-      <CardDemo />
+      <IssueCardDemo />
+      <CompareCardDemo />
     </div>
   );
 }
