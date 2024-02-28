@@ -12,19 +12,12 @@ import {
   AlertTriangle,
   Info,
   CheckCircle2,
+  Trash2,
 } from "lucide-react";
 
 export default function IssueCardDemo() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
-        gap: "1rem",
-        padding: "4rem",
-      }}
-    >
+    <div className="flex flex-wrap items-center gap-4 p-4">
       <h2 className="text-3xl font-semibold basis-full pb-3">Issue Card</h2>
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -35,7 +28,7 @@ export default function IssueCardDemo() {
                 <AlertTriangle className="h-4 w-4" />
                 Payment Terms
               </div>
-              <CheckCircle2 className="h-4 w-4 stroke-dwGreen-700" />
+              <Trash2 className="h-4 w-4 stroke-dwGreen-700" />
             </CardTitle>
             <CardDescription>
               The aggregate fee is listed as 'USD AAA,000' which appears to be a
@@ -44,11 +37,11 @@ export default function IssueCardDemo() {
             </CardDescription>
           </CardHeader>
           <CardFooter className="flex gap-2">
-            <Button variant="outline" size="sm">
+            <Button variant="secondary" size="sm">
               Generate Solution
               <Sparkles className="h-3.5 w-3.5" />
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="secondary" size="sm">
               Jump To
               <MoveUpRight className="h-3.5 w-3.5" />
             </Button>
@@ -61,7 +54,7 @@ export default function IssueCardDemo() {
                 <AlertTriangle className="h-4 w-4" />
                 Payment Terms
               </div>
-              <CheckCircle2 className="h-4 w-4 stroke-dwGreen-700" />
+              <Trash2 className="h-4 w-4 stroke-dwGreen-700" />
             </CardTitle>
             <CardDescription>
               The aggregate fee is listed as 'USD AAA,000' which appears to be a
@@ -70,11 +63,11 @@ export default function IssueCardDemo() {
             </CardDescription>
           </CardHeader>
           <CardFooter className="flex gap-2">
-            <Button variant="outline" size="sm">
+            <Button variant="secondary" size="sm">
               Generate Solution
               <Sparkles className="h-3.5 w-3.5" />
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="secondary" size="sm">
               Jump To
               <MoveUpRight className="h-3.5 w-3.5" />
             </Button>
@@ -87,7 +80,7 @@ export default function IssueCardDemo() {
                 <Info className="h-4 w-4" />
                 Payment Terms
               </div>
-              <CheckCircle2 className="h-4 w-4 stroke-dwGreen-700" />
+              <Trash2 className="h-4 w-4 stroke-dwGreen-700" />
             </CardTitle>
             <CardDescription>
               The aggregate fee is listed as 'USD AAA,000' which appears to be a
@@ -96,11 +89,11 @@ export default function IssueCardDemo() {
             </CardDescription>
           </CardHeader>
           <CardFooter className="flex gap-2">
-            <Button variant="outline" size="sm">
+            <Button variant="secondary" size="sm">
               Generate Solution
               <Sparkles className="h-3.5 w-3.5" />
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="secondary" size="sm">
               Jump To
               <MoveUpRight className="h-3.5 w-3.5" />
             </Button>

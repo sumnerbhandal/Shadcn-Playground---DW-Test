@@ -3,12 +3,12 @@ import * as React from "react";
 import { cn } from "../../lib/utils";
 import { cva } from "class-variance-authority";
 
-const cardVariants = cva("rounded border p-3", {
+const cardVariants = cva("rounded border p-3 flex flex-wrap gap-3", {
   variants: {
     variant: {
       error: "border-s-4 border-red-300",
       warning: "border-s-4 border-amber-300",
-      default: "border-gray-300",
+      default: "border-dwBlack-300",
     },
   },
   defaultVariants: {
@@ -61,11 +61,7 @@ const CardContent = React.forwardRef(({ className, ...props }, ref) => (
 CardContent.displayName = "CardContent";
 
 const CardFooter = React.forwardRef(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex items-center pt-3", className)}
-    {...props}
-  />
+  <div ref={ref} className={cn("flex items-center", className)} {...props} />
 ));
 CardFooter.displayName = "CardFooter";
 
