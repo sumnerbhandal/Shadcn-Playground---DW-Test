@@ -35,23 +35,27 @@ const object = {
     icon: <FileQuestion className="h-3.5 w-3.5" />,
     name: "Payment Terms",
     variant: "error",
-    description:
-      "The aggregate fee is listed as 'USD AAA,000' which appears to be a placeholder. This needs to be clarified to avoid anymisunderstanding or dispute over the fee amount.",
+    showDescription: true,
+    description: "The aggregate fee is listed as 'USD AAA,000' is missing.",
+    showRedline: false,
     workingDocText: "The payment terms in this contract require net 30 days.",
   },
   item2: {
     icon: <Info className="h-3.5 w-3.5" />,
     name: "Payment Terms",
     variant: "warning",
+    showDescription: true,
     description:
       "The aggregate fee is listed as 'USD AAA,000' which appears to be a placeholder. This needs to be clarified to avoid anymisunderstanding or dispute over the fee amount.",
+    showRedline: true,
     workingDocText: "The payment terms in this contract require net 30 days.",
   },
   item3: {
     icon: <CheckCheck className="h-3.5 w-3.5" />,
     name: "Payment Terms",
-    description:
-      "The aggregate fee is listed as 'USD AAA,000' which appears to be a placeholder. This needs to be clarified to avoid anymisunderstanding or dispute over the fee amount.",
+    showDescription: false,
+    showRedline: true,
+    description: "Matches",
     workingDocText: "The payment terms in this contract require net 30 days.",
   },
 };
@@ -81,7 +85,9 @@ export default function CompareCardDemo() {
                         <PlusSquare className="h-4 w-4" />
                       )}
                     </CardTitle>
-                    <CardDescription>{item.description}</CardDescription>
+                    {item.showDescription ? (
+                      <CardDescription>{item.description}</CardDescription>
+                    ) : null}
                   </CardHeader>
                 </CollapsibleTrigger>
 
@@ -95,7 +101,7 @@ export default function CompareCardDemo() {
                     <MoveUpRight className="h-3.5 w-3.5" />
                   </Button>
                 </CardFooter>
-                <CollapsibleContent className="space-y-2 CollapsibleContent">
+                <CollapsibleContent className="space-y-2 CollapsibleContent w-full">
                   <hr className="my-3" />
                   <p className="text-sm text-dwBlack-800 font-medium">
                     Showing comparison as
@@ -105,10 +111,12 @@ export default function CompareCardDemo() {
                       <input type="radio" />
                       <p>Source</p>
                     </div>
-                    <div className="flex gap-2 align-middle">
-                      <input type="radio" />
-                      <p>Redline</p>
-                    </div>
+                    {item.showRedline ? (
+                      <div className="flex gap-2 align-middle">
+                        <input type="radio" />
+                        <p>Redline</p>
+                      </div>
+                    ) : null}
                     <div className="flex gap-2 align-middle">
                       <input type="radio" />
                       <p>AI Summary</p>
