@@ -1,0 +1,38 @@
+import "./styles.css";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+
+
+import Buttons from "./Buttons";
+import IssueCardDemo from "./Issue-Card";
+import CompareCardDemo from "./Compare-Card";
+
+
+function Navigation() {
+  return(
+  <div id="navigation" class="p-4 mb-4 flex items-center transition-colors text-base font-semibold">
+    <NavLink exact to='/' className="p-2 px-4 rounded-full ">Home</NavLink>
+    <NavLink to='/buttons' className="p-2 px-4 rounded-full">Buttons</NavLink>
+    <NavLink to='/issues' className="p-2 px-4 rounded-full">Issues</NavLink>
+    <NavLink to='/compare' className="p-2 px-4 rounded-full">Compare</NavLink>
+  </div>
+)}
+
+export default function App() {
+  return (
+    <div>
+      <Navigation /> 
+      <Routes>
+        <Route index element={<div>Home</div>} />
+        <Route path="home" element={<div>Home</div>} />
+        {/* <Route path="user" element={<User />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="account" element={<Account />} />
+        </Route> */}
+        <Route path="buttons" element={<Buttons />} />
+        <Route path="issues" element={<IssueCardDemo />} />
+        <Route path="compare" element={<CompareCardDemo />} />
+      </Routes>
+      
+    </div>
+  );
+}
