@@ -6,7 +6,7 @@ import { Info, Sparkles } from "lucide-react";
 
 export default function Buttons() {
   return (
-    <div className="flex flex-wrap items-center gap-4 p-4">
+    <div className="flex flex-wrap items-center gap-4 p-4 md:p-8 app-container">
       <div className="demo-section basis-full flex-wrap gap-4">
         <h2 className="text-3xl font-semibold basis-full pb-3">Buttons</h2>
         <div className="demo-section basis-full flex-wrap gap-4">

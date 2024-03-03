@@ -9,7 +9,7 @@ import CompareCardDemo from "./Compare-Card";
 
 function Navigation() {
   return(
-  <div id="navigation" class="p-4 mb-4 flex items-center transition-colors text-base font-semibold">
+  <div id="navigation" class="py-4 px-2 flex items-center transition-colors text-base font-semibold fixed bottom-0 border border-t-1 w-full">
     <NavLink exact to='/' className="p-2 px-4 rounded-full ">Home</NavLink>
     <NavLink to='/buttons' className="p-2 px-4 rounded-full">Buttons</NavLink>
     <NavLink to='/issues' className="p-2 px-4 rounded-full">Issues</NavLink>

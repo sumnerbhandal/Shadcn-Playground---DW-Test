@@ -111,8 +111,57 @@
     height: 0;
   }
 }
+@keyframes slideUp {
+  from {
+    height: var(--radix-collapsible-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem)
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
 
 
 #navigation a.active {
   background: #e6e6e6;
+}
+
+
+.app-container {
+  height: calc(100vh - 72px);
+  overflow-y: scroll;
+  align-content: start;
+}
+
+.loading {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  width: 1rem;
+  height: 1rem;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.05);
+  border-left-color: rgba(0, 0, 0, 1);
+  border-top-color: rgba(0, 0, 0, 1);
+  animation: spin 0.6s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(359deg);
+  }
 }

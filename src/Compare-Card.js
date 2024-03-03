@@ -28,11 +28,10 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./components/ui/collapsible.jsx";
-import { Textarea } from "./components/ui/textarea";
 
 const object = {
   item1: {
-    icon: <FileQuestion className="h-3.5 w-3.5" />,
+    icon: <FileQuestion className="h-4 w-4" />,
     name: "Payment Terms",
     variant: "error",
     showDescription: true,
@@ -41,7 +40,7 @@ const object = {
     workingDocText: "The payment terms in this contract require net 30 days.",
   },
   item2: {
-    icon: <Info className="h-3.5 w-3.5" />,
+    icon: <Info className="h-4 w-4" />,
     name: "Payment Terms",
     variant: "warning",
     showDescription: true,
@@ -51,7 +50,7 @@ const object = {
     workingDocText: "The payment terms in this contract require net 30 days.",
   },
   item3: {
-    icon: <CheckCheck className="h-3.5 w-3.5" />,
+    icon: <CheckCheck className="h-4 w-4" />,
     name: "Payment Terms",
     showDescription: false,
     showRedline: true,
@@ -64,7 +63,7 @@ export default function CompareCardDemo() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="flex flex-wrap items-center gap-4 p-4">
+    <div className="flex flex-wrap items-start gap-4 p-4 md:p-8 app-container fade-in">
       <h2 className="text-3xl font-semibold basis-full pb-3">Compare Card</h2>
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
