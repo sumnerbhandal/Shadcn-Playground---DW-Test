@@ -95,19 +95,14 @@ export default function IssueCardDemo() {
   const [isLoading, setIsLoading] = useState(true);
     
   useEffect(() => {
-    // Simulate an API call
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
   }, []);
 
-  // if (isLoading) {
-  //   return <Loading />;
-  // }
 
   return (
 
-    // <Loading text="Analyzing your document" />
     isLoading ? <Loading text="Analyzing your document" /> :
 
     <div className="flex flex-wrap items-start gap-4 p-4 md:p-8 app-container fade-in">
