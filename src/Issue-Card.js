@@ -17,12 +17,86 @@ import {
   Trash2,
 } from "lucide-react";
 import Loading from './loading';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/ui/tabs"
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs"
+
+const FilteredResults = ({ issues, tab }) => {
+  return (
+    <div className="w-full">
+      {Object.keys(issues).map((key) => {
+        const issue = issues[key];
+        return (
+          <div key={key} className="flex flex-wrap gap-2">
+            {issue.items
+                .filter((item) => item.tab === tab).length > 0 ?
+                <h3 className="text-black text-xs font-medium w-full pt-3 mt-">
+                  {issue.name}
+                </h3> 
+                : 
+                null}
+
+            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {issue.items
+                .filter((item) => item.tab === tab)
+                .map((item, index) => (
+                  <Card key={index} variant={item.variant}>
+                    <CardHeader>
+                      <CardTitle>
+                        <div className="justify-start items-center gap-2 inline-flex">
+                          {item.icon}
+                          {item.name}
+                        </div>
+                        <Trash2 className="h-4 w-4 stroke-dwGreen-700 cursor-pointer" />
+                      </CardTitle>
+                      {item.showDescription ? (
+                        <CardDescription>{item.description}</CardDescription>
+                      ) : null}
+                    </CardHeader>
+                    {item.showBanner ? (
+                      <>
+                        <CardContent>
+                          <Sparkles className="h-4 w-4" />
+                          {item.bannerText}
+                        </CardContent>
+                      </>
+                    ) : null}
+                    <CardFooter className="flex gap-2">
+                      <Button variant="secondary" size="sm">
+                        Generate Solution
+                        <Sparkles className="h-3.5 w-3.5" />
+                      </Button>
+                      <Button variant="secondary" size="sm">
+                        Jump To
+                        <MoveUpRight className="h-3.5 w-3.5" />
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 
 const issues = {
   issue1: {
     name: "3. USE RESTRICTIONS CP",
     items: [
       {
+        tab: "unfair",
+        name: "Restrictions on Transferability",
+        icon: <AlertTriangle className="h-4 w-4" />,
+        variant: "error",
+        showDescription: true,
+        description: "The inability to sell, sublicense, or otherwise transfer the Software could be problematic for APPLE CORP. if its business needs change or if it seeks to monetize unused licenses.",
+        showBanner: false,
+        bannerText: "The payment terms in this contract require net 30 days.",
+      },
+      {
+        tab: "unfair",
         name: "Restrictions on Transferability",
         icon: <AlertTriangle className="h-4 w-4" />,
         variant: "error",
@@ -37,6 +111,7 @@ const issues = {
     name: "6. LICENSEE RESPONSIBILITIES CP",
     items: [
       {
+        tab: "unfair",
         name: "Broad Liability for Licensee",
         icon: <AlertTriangle className="h-4 w-4" />,
         variant: "error",
@@ -51,6 +126,7 @@ const issues = {
     name: "8. CONFIDENTIALITY CP",
     items: [
       {
+        tab: "unfair",
         name: "Obligation to Destroy or Return Confidential Information",
         icon: <AlertTriangle className="h-4 w-4" />,
         variant: "error",
@@ -65,12 +141,58 @@ const issues = {
     name: "9. INTELLECTUAL PROPERTY OWNERSHIP",
     items: [
       {
+        tab: "unfair",
         name: "Prevent training on Licensee Data",
         icon: <AlertTriangle className="h-4 w-4" />,
         variant: "error",
         showDescription: true,
         description: "This clause does not contain any language that limits the Licensors ability to train machine learning models on your data. This may breach confidentiality agreements with the Licensee and their counter-parties.",
         showBanner: true,
+        bannerText: "Recent public agreements have been including language that prevents training on Licensee Data",
+      }
+    ]
+  },
+  issue5: {
+    name: "10. INTELLECTUAL PROPERTY OWNERSHIP",
+    items: [
+      {
+        tab: "guidance",
+        name: "Prevent training on Licensee Data",
+        icon: <Info className="h-4 w-4" />,
+        variant: "default",
+        showDescription: true,
+        description: "This clause does not contain any language that limits the Licensors ability to train machine learning models on your data. This may breach confidentiality agreements with the Licensee and their counter-parties.",
+        showBanner: false,
+        bannerText: "Recent public agreements have been including language that prevents training on Licensee Data",
+      }
+    ]
+  },
+  issue6: {
+    name: "11. INTELLECTUAL PROPERTY OWNERSHIP",
+    items: [
+      {
+        tab: "unusual",
+        name: "Prevent training on Licensee Data",
+        icon: <AlertTriangle className="h-4 w-4" />,
+        variant: "warning",
+        showDescription: true,
+        description: "This clause does not contain any language that limits the Licensors ability to train machine learning models on your data. This may breach confidentiality agreements with the Licensee and their counter-parties.",
+        showBanner: true,
+        bannerText: "Recent public agreements have been including language that prevents training on Licensee Data",
+      }
+    ]
+  },
+  issue7: {
+    name: "12. INTELLECTUAL PROPERTY OWNERSHIP",
+    items: [
+      {
+        tab: "unusual",
+        name: "Prevent training on Licensee Data",
+        icon: <AlertTriangle className="h-4 w-4" />,
+        variant: "warning",
+        showDescription: true,
+        description: "This clause does not contain any language that limits the Licensors ability to train machine learning models on your data. This may breach confidentiality agreements with the Licensee and their counter-parties.",
+        showBanner: false,
         bannerText: "Recent public agreements have been including language that prevents training on Licensee Data",
       }
     ]
@@ -107,136 +229,22 @@ export default function IssueCardDemo() {
 
     <div className="flex flex-wrap items-start gap-4 p-4 md:p-8 app-container fade-in">
 
-      {Object.keys(issues).map(key => {
-        const issue = issues[key];
-        return (
-          <div className="flex flex-wrap gap-2" key={key}>
-            <h3 className='text-black text-xs font-medium w-full pt-3'>{issue.name}</h3>
-              <div className='w-full grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                {issue.items.map(item => (
-                  <Card variant="error">
-                  <CardHeader>
-                    <CardTitle>
-                      <div className="justify-start items-center gap-2 inline-flex">
-                      {item.icon}
-                      {item.name}
-                      </div>
-                      <Trash2 className="h-4 w-4 stroke-dwGreen-700 cursor-pointer" />
-                    </CardTitle>
-                    {item.showDescription ? (
-                          <CardDescription>{item.description}</CardDescription>
-                        ) : null}
-                  </CardHeader>
-                  {item.showBanner ? (
-                      <>
-                        {/* <div></div> */}
-                        <CardContent>
-                          <Sparkles className="h-4 w-4" />{item.bannerText}
-                        </CardContent>
-                      </>
-                        ) 
-                      : null}
-                  <CardFooter className="flex gap-2">
-                    <Button variant="secondary" size="sm">
-                      Generate Solution
-                      <Sparkles className="h-3.5 w-3.5" />
-                    </Button>
-                    <Button variant="secondary" size="sm">
-                      Jump To
-                      <MoveUpRight className="h-3.5 w-3.5" />
-                    </Button>
-                  </CardFooter>
-                </Card>
-                ))}
-              </div>
-            </div>
-          );
-        })}
-
-
-
-
-      <h3 className='text-black text-xs font-medium w-full pt-3 border-t-2 mt-8'>Component Demos</h3>
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <Card variant="error">
-          <CardHeader>
-            <CardTitle>
-              <div className="justify-start items-center gap-2 inline-flex">
-                <AlertTriangle className="h-4 w-4" />
-                Payment Terms
-              </div>
-              <Trash2 className="h-4 w-4 stroke-dwGreen-700" />
-            </CardTitle>
-            <CardDescription>
-              The aggregate fee is listed as 'USD AAA,000' which appears to be a
-              placeholder. This needs to be clarified to avoid any
-              misunderstanding or dispute over the fee amount.
-            </CardDescription>
-          </CardHeader>
-          <CardFooter className="flex gap-2">
-            <Button variant="secondary" size="sm">
-              Generate Solution
-              <Sparkles className="h-3.5 w-3.5" />
-            </Button>
-            <Button variant="secondary" size="sm">
-              Jump To
-              <MoveUpRight className="h-3.5 w-3.5" />
-            </Button>
-          </CardFooter>
-        </Card>
-        <Card variant="warning">
-          <CardHeader>
-            <CardTitle>
-              <div className="justify-start items-center gap-2 inline-flex">
-                <AlertTriangle className="h-4 w-4" />
-                Payment Terms
-              </div>
-              <Trash2 className="h-4 w-4 stroke-dwGreen-700" />
-            </CardTitle>
-            <CardDescription>
-              The aggregate fee is listed as 'USD AAA,000' which appears to be a
-              placeholder. This needs to be clarified to avoid any
-              misunderstanding or dispute over the fee amount.
-            </CardDescription>
-          </CardHeader>
-          <CardFooter className="flex gap-2">
-            <Button variant="secondary" size="sm">
-              Generate Solution
-              <Sparkles className="h-3.5 w-3.5" />
-            </Button>
-            <Button variant="secondary" size="sm">
-              Jump To
-              <MoveUpRight className="h-3.5 w-3.5" />
-            </Button>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>
-              <div className="justify-start items-center gap-2 inline-flex">
-                <Info className="h-4 w-4" />
-                Payment Terms
-              </div>
-              <Trash2 className="h-4 w-4 stroke-dwGreen-700" />
-            </CardTitle>
-            <CardDescription>
-              The aggregate fee is listed as 'USD AAA,000' which appears to be a
-              placeholder. This needs to be clarified to avoid any
-              misunderstanding or dispute over the fee amount.
-            </CardDescription>
-          </CardHeader>
-          <CardFooter className="flex gap-2">
-            <Button variant="secondary" size="sm">
-              Generate Solution
-              <Sparkles className="h-3.5 w-3.5" />
-            </Button>
-            <Button variant="secondary" size="sm">
-              Jump To
-              <MoveUpRight className="h-3.5 w-3.5" />
-            </Button>
-          </CardFooter>
-        </Card>
-      </div>
+    <Tabs defaultValue="Unfair" className="w-full">
+      <TabsList>
+        <TabsTrigger value="Unfair">Unfair (5)</TabsTrigger>
+        <TabsTrigger value="Unusual">Unusual (2)</TabsTrigger>
+        <TabsTrigger value="Guidance">Guidance (1)</TabsTrigger>
+      </TabsList>
+      <TabsContent value="Unfair">
+        <FilteredResults issues={issues} tab="unfair" />
+      </TabsContent>
+      <TabsContent value="Unusual">
+        <FilteredResults issues={issues} tab="unusual" />
+      </TabsContent>
+      <TabsContent value="Guidance">
+        <FilteredResults issues={issues} tab="guidance" />
+      </TabsContent>
+    </Tabs>
 
     </div>
   );
