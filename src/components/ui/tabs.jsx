@@ -6,19 +6,6 @@ import { cn } from "../../lib/utils"
 import { cva } from "class-variance-authority";
 
 
-const cardVariants = cva("rounded border p-3 flex flex-wrap gap-3 text-gray-700", {
-  variants: {
-    variant: {
-      error: "border-s-4 border-red-300",
-      warning: "border-s-4 border-amber-300",
-      default: "border-dwBlack-300",
-    },
-  },
-  defaultVariants: {
-    variant: "default",
-  },
-});
-
 const Tabs = TabsPrimitive.Root
 
 const TabsList = React.forwardRef(({ className, variant, ...props }, ref) => (
@@ -41,7 +28,7 @@ const TabsTrigger = React.forwardRef(({ className, variant, ...props }, ref) => 
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center bg-dwBlack-100 border border-dwBlack-200 whitespace-nowrap box-border	  rounded-full h-7 px-2.5 py-1.5 text-xs font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-white data-[state=active]:shadow-sm data-[state=active]:bg-dwGreen-900 data-[state=active]:border-dwGreen=900",
+      "inline-flex items-center justify-center bg-dwBlack-100 border border-dwBlack-200 whitespace-nowrap box-border rounded-full h-7 px-2.5 py-1.5 text-xs font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-white data-[state=active]:shadow-sm data-[state=active]:bg-dwGreen-900 data-[state=active]:border-dwGreen-900",
       className
     )}
     {...props}
