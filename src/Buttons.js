@@ -57,6 +57,21 @@ export default function Buttons() {
           <Button size="icon">
             <Sparkles className="h-3.5 w-3.5" />
           </Button>
+          
+          <Button size="sm">
+            Button
+          </Button>
+          <Button size="sm" disabled>
+            Disabled
+          </Button>
+          <Button size="sm">
+            <Sparkles className="h-3.5 w-3.5" />
+            Icon Left
+          </Button>
+          <Button size="sm">
+            Icon Right
+            <Sparkles className="h-3.5 w-3.5" />
+          </Button>
         </div>
         <div className="demo-section basis-full flex-wrap gap-4 py-2">
           <h3 className="text-xl basis-full">Secondary</h3>
