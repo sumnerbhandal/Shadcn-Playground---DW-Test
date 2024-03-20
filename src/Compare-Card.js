@@ -91,11 +91,11 @@ export default function CompareCardDemo() {
                 </CollapsibleTrigger>
 
                 <CardFooter className="flex gap-2">
-                  <Button variant="secondary" size="sm">
+                  <Button variant="outline" size="sm">
                     Mark as Important
                     <Flag className="h-3.5 w-3.5" />
                   </Button>
-                  <Button variant="secondary" size="sm">
+                  <Button variant="outline" size="sm">
                     Jump To
                     <MoveUpRight className="h-3.5 w-3.5" />
                   </Button>

@@ -29,7 +29,7 @@ const FilteredResults = ({ issues, tab }) => {
           <div key={key} className="flex flex-wrap gap-2">
             {issue.items
                 .filter((item) => item.tab === tab).length > 0 ?
-                <h3 className="text-black text-xs font-medium w-full pt-3 mt-">
+                <h3 className="text-black text-base font-medium w-full pt-3 mt-3">
                   {issue.name}
                 </h3> 
                 : 
@@ -61,11 +61,11 @@ const FilteredResults = ({ issues, tab }) => {
                       </>
                     ) : null}
                     <CardFooter className="flex gap-2">
-                      <Button variant="secondary" size="sm">
+                      <Button variant="outline" size="sm">
                         Generate Solution
                         <Sparkles className="h-3.5 w-3.5" />
                       </Button>
-                      <Button variant="secondary" size="sm">
+                      <Button variant="outline" size="sm">
                         Jump To
                         <MoveUpRight className="h-3.5 w-3.5" />
                       </Button>
