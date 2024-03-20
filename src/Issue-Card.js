@@ -29,7 +29,7 @@ const FilteredResults = ({ issues, tab }) => {
           <div key={key} className="flex flex-wrap gap-2">
             {issue.items
                 .filter((item) => item.tab === tab).length > 0 ?
-                <h3 className="text-black text-base font-medium w-full pt-3 mt-3">
+                <h3 className="text-black text-sm font-medium w-full pt-3 mt-3">
                   {issue.name}
                 </h3> 
                 : 
