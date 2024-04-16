@@ -16,15 +16,15 @@ export default function Buttons() {
             Disabled
           </Button>
           <Button variant="ai">
-            <Sparkles className="h-3.5 w-3.5" />
+            <Sparkles className="h-4 w-4" />
             Icon Left
           </Button>
           <Button variant="ai">
             Icon Right
-            <Sparkles className="h-3.5 w-3.5" />
+            <Sparkles className="h-4 w-4" />
           </Button>
           <Button size="icon" variant="ai">
-            <Sparkles className="h-3.5 w-3.5" />
+            <Sparkles className="h-4 w-4" />
           </Button>
 
           <Button size="sm" variant="ai">
@@ -47,15 +47,15 @@ export default function Buttons() {
           <Button>Button</Button>
           <Button disabled>Disabled</Button>
           <Button>
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-4 w-4" />
             Icon Left
           </Button>
           <Button>
             Icon Right
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-4 w-4" />
           </Button>
           <Button size="icon">
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-4 w-4" />
           </Button>
           
           <Button size="sm">
@@ -65,12 +65,12 @@ export default function Buttons() {
             Disabled
           </Button>
           <Button size="sm">
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-3.5 w-3.5" />
             Icon Left
           </Button>
           <Button size="sm">
             Icon Right
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-3.5 w-3.5" />
           </Button>
         </div>
         <div className="demo-section basis-full flex-wrap gap-4 py-2">
@@ -80,15 +80,15 @@ export default function Buttons() {
             Disabled
           </Button>
           <Button variant="secondary">
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-4 w-4" />
             Icon Left
           </Button>
           <Button variant="secondary">
             Icon Right
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-4 w-4" />
           </Button>
           <Button size="icon" variant="secondary">
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-4 w-4" />
           </Button>
         </div>
         <div className="demo-section basis-full flex-wrap gap-4 py-2">
@@ -98,15 +98,15 @@ export default function Buttons() {
             Disabled
           </Button>
           <Button variant="outline">
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-4 w-4" />
             Icon Left
           </Button>
           <Button variant="outline">
             Icon Right
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-4 w-4" />
           </Button>
           <Button size="icon" variant="outline">
-            <Sparkles className="h-3.5 w-3.5" />
+            <Info className="h-4 w-4" />
           </Button>
         </div>
         <div className="demo-section basis-full flex-wrap gap-4 py-2">
