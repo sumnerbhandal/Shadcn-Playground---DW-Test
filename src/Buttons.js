@@ -41,6 +41,9 @@ export default function Buttons() {
             Icon Right
             <Sparkles className="h-3.5 w-3.5" />
           </Button>
+          <Button size="iconSm" variant="ai">
+            <Info className="h-3.5 w-3.5" />
+          </Button>
         </div>
         <div className="demo-section basis-full flex-wrap gap-4">
           <h3 className="text-xl basis-full">Default</h3>
@@ -70,6 +73,9 @@ export default function Buttons() {
           </Button>
           <Button size="sm">
             Icon Right
+            <Info className="h-3.5 w-3.5" />
+          </Button>
+          <Button size="iconSm">
             <Info className="h-3.5 w-3.5" />
           </Button>
         </div>
