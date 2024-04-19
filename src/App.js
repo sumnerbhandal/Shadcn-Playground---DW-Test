@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Buttons from "./Buttons";
 import IssueCardDemo from "./Issue-Card";
 import CompareCardDemo from "./Compare-Card";
+import Home from "./Home";
 
 
 function Navigation() {
@@ -22,8 +23,8 @@ export default function App() {
     <div>
       <Navigation /> 
       <Routes>
-        <Route index element={<div>Home</div>} />
-        <Route path="home" element={<div>Home</div>} />
+        <Route index element={<Home />} />
+        <Route path="home" element={<Home />} />
         <Route path="buttons" element={<Buttons />} />
         <Route path="issues" element={<IssueCardDemo />} />
         <Route path="compare" element={<CompareCardDemo />} />
