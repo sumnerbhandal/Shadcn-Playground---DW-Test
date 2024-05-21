@@ -3,7 +3,7 @@ import * as React from "react";
 import { cn } from "../../lib/utils";
 import { cva } from "class-variance-authority";
 
-const cardVariants = cva("rounded border p-3 flex flex-wrap gap-3", {
+const cardVariants = cva("rounded border p-3 pt-1 flex flex-wrap gap-3", {
   variants: {
     variant: {
       error: "border-s-4 border-red-300",
@@ -38,7 +38,7 @@ const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
   <h3
     ref={ref}
     className={cn(
-      "justify-between items-center inline-flex text-black text-base font-semibold leading-none",
+      "justify-between items-center inline-flex text-black text-base font-semibold leading-none  min-h-8 -mb-0.5",
       className,
     )}
     {...props}
@@ -49,7 +49,7 @@ CardTitle.displayName = "CardTitle";
 const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("pt-0.5 text-sm text-dwBlack-1000 font-normal", className)}
+    className={cn("pt-0 text-base text-dwBlack-1000 font-normal", className)}
     {...props}
   />
 ));

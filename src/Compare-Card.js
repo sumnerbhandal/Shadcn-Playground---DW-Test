@@ -143,7 +143,6 @@ export default function CompareCardDemo() {
                       <label
                         className="font-medium"
                         for="Working-Document"
-                        className="font-medium"
                       >
                         Working Document
                       </label>

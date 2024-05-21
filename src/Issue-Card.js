@@ -15,6 +15,8 @@ import {
   AlertTriangle,
   Info,
   Trash2,
+  CheckCircle2,
+  EyeOff
 } from "lucide-react";
 import Loading from './loading';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/ui/tabs"
@@ -46,7 +48,6 @@ const FilteredResults = ({ issues, tab }) => {
                           {item.icon}
                           {item.name}
                         </div>
-                        <Trash2 className="h-4 w-4 stroke-dwGreen-700 cursor-pointer" />
                       </CardTitle>
                       {item.showDescription ? (
                         <CardDescription>{item.description}</CardDescription>
@@ -61,13 +62,17 @@ const FilteredResults = ({ issues, tab }) => {
                       </>
                     ) : null}
                     <CardFooter className="flex gap-2">
-                      <Button variant="outline" size="sm">
-                        Generate Solution
-                        <Sparkles className="h-3.5 w-3.5" />
+                      <Button size="sm">
+                        Apply Solution
+                        <CheckCircle2 className="h-3.5 w-3.5" />
                       </Button>
                       <Button variant="outline" size="sm">
                         Jump To
                         <MoveUpRight className="h-3.5 w-3.5" />
+                      </Button>
+                      <Button variant="secondary" size="sm">
+                        Ignore
+                        <EyeOff className="h-3.5 w-3.5" />
                       </Button>
                     </CardFooter>
                   </Card>
