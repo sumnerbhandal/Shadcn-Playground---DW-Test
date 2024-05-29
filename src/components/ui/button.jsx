@@ -18,7 +18,7 @@ const buttonVariants = cva(
         secondary: "bg-dwBlack-100 text-dwBlack-1100 hover:bg-dwBlack-200",
         ghost:
           "text-dwBlack-1100 hover:bg-dwBlack-100/50 hover:text-accent-foreground",
-        link: "text-dwGreen-700 underline-offset-4 underline text-sm hover:text-dwGreen-800",
+        link: "text-dwGreen-700 underline-offset-4 underline text-sm hover:text-dwGreen-800 font-normal",
         blockLink:
           "text-dwGreen-700 text-sm text-sm hover:text-dwGreen-800",
       },

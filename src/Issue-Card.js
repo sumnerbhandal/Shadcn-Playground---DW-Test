@@ -16,13 +16,24 @@ import {
   Info,
   Trash2,
   CheckCircle2,
-  EyeOff
+  EyeOff,
+  ChevronDown,
+  ChevronUp,
+  Expand
 } from "lucide-react";
 import Loading from './loading';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/ui/tabs"
 // import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs"
 
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "./components/ui/collapsible.jsx";
+
 const FilteredResults = ({ issues, tab }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <div className="w-full">
       {Object.keys(issues).map((key) => {
@@ -61,6 +72,48 @@ const FilteredResults = ({ issues, tab }) => {
                         </CardContent>
                       </>
                     ) : null}
+                     <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full" key={key}>
+                <CollapsibleTrigger className="cursor-pointer w-full" asChild>
+                  <div className='w-full'>
+                    <div className='justify-between items-center inline-flex text-black text-base font-semibold leading-none min-h-8 -mb-0.5 w-full'>
+                      <div className="justify-start items-center inline-flex text-sm leading-normal">
+                        Suggested Solution 
+                        
+                        <Button variant="ghost" size="icon">
+                          
+                          <Info className="h-4 w-4" />
+                        </Button> 
+                      </div>
+                      {isOpen ? (
+                        <ChevronUp className="h-4 w-4" />
+                      ) : (
+                        <ChevronDown className="h-4 w-4" />
+                      )}
+                    </div>
+                  </div>
+                </CollapsibleTrigger>
+
+                <CollapsibleContent className="space-y-2 CollapsibleContent w-full">
+                  <div className="w-100 rounded border border-dwBlack-200 flex-col justify-start items-start gap-2 inline-flex mt-2">
+                    <div className="self-stretch h-52 p-3 flex-col justify-start items-start gap-3 flex">
+                      <div className="self-stretch"><span className="text-black text-xs font-normal  leading-none">Subject to the terms and conditions of this Agreement, Licensor hereby grants Licensee non-exclusive, non-sublicenseable, non-transferable, worldwide and royalty-free licenses (“License(s)”) to use the product described in Schedule 1 in object code format (the “Software”) during the Term. The number of Licenses granted hereunder and the </span><span className="text-blue-700 text-xs font-normal  underline leading-none">individual and aggregate</span><span className="text-black text-xs font-normal  leading-none"> fees to be paid by the Licensee to the Licensor for such Licenses shall be as set out in Table 1 below</span><span className="text-red-600 text-xs font-normal  line-through leading-none">.</span><span className="text-blue-700 text-xs font-normal  underline leading-none">, including a clear breakdown of the total fee amount.</span><span className="text-black text-xs font-normal  leading-none"> Licensee shall pay the fees in one instalment within thirty (30) after the Effective Date.</span></div>
+                    </div>
+                    <div className="self-stretch bg-white justify-between items-center inline-flex">
+                      <div className="grow shrink basis-0 self-stretch p-2 bg-dwBlack-100 border-t border-dwBlack-200 justify-between items-center flex">
+                        <Button variant="ai" size="sm">
+                          Revise
+                          <Sparkles className="h-3.5 w-3.5" />
+                        </Button>
+                        <Button variant="outline" size="sm">
+                          Expand Preview
+                        <Expand className="h-3.5 w-3.5" />
+                      </Button>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </CollapsibleContent>
+            </Collapsible>
                     <CardFooter className="flex gap-2">
                       <Button size="sm">
                         Apply Solution
@@ -236,9 +289,9 @@ export default function IssueCardDemo() {
 
     <Tabs defaultValue="Unfair" className="w-full">
       <TabsList>
-        <TabsTrigger value="Unfair">Unfair (5)</TabsTrigger>
-        <TabsTrigger value="Unusual">Unusual (2)</TabsTrigger>
-        <TabsTrigger value="Guidance">Guidance (1)</TabsTrigger>
+        <TabsTrigger value="Unfair">Important (5)</TabsTrigger>
+        <TabsTrigger value="Unusual">Resolved (2)</TabsTrigger>
+        <TabsTrigger value="Guidance">Ignored (1)</TabsTrigger>
       </TabsList>
       <TabsContent value="Unfair">
         <FilteredResults issues={issues} tab="unfair" />
